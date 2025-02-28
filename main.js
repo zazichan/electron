@@ -1,5 +1,10 @@
-const { app, BrowserWindow } = require('electron/main')
+const { app, BrowserWindow } = require('electron')
 const path = require('node:path')
+
+// Automatically reloads the app when files change during development
+if (process.env.NODE_ENV === 'development') {
+  require('electron-reloader')(module)
+}
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -10,7 +15,7 @@ const createWindow = () => {
     }
   })
 
-  win.loadFile('index.html')
+  win.loadFile('./html/index.html')
 }
 
 app.whenReady().then(() => {

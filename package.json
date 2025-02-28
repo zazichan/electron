@@ -11,6 +11,7 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
-    "electron": "^34.3.0"
+    "electron": "^34.3.0",
+    "electron-reloader": "^1.2.3"
   }
 }
